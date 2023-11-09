@@ -1,0 +1,52 @@
+# Import necessary libraries
+from flask import Flask, render_template, request
+import pandas as pd
+import joblib
+ # For model loading
+# Create a Flask web app
+app = Flask(__name__)
+if __name__ == '__main__':
+    app.run(debug=True)
+# Load the trained machine learning model
+
+model = joblib.load('model.pkl')
+# Define a route for the home page
+@app.route('/')
+def home():
+    return "hi"
+
+# Define a route to handle predictions
+@app.route('/predict', methods=['POST'])
+def predict():
+    if request.method == 'POST':
+        # Get user input data from the form
+        data = {
+            'BMI': float(request.form['bmi']),
+            'Smoking': int(request.form['smoking']),
+            'Alcohol': int(request.form['alcohol']),
+            'stroke': int(request.form['stroke']),
+            'physical health': int(request.form['physical health']),
+            'mental health': int(request.form['mental health']),
+            'difficulty in walking': int(request.form['difficulty in walking']),
+            'sex': int(request.form['sex']),
+            'Age category': int(request.form['Age category']),
+            'race': int(request.form['race']),
+            'diabetic': int(request.form['diabetic']),
+            'physical activity': int(request.form['physical activity']),
+            'genhealth': int(request.form['genhealth']),
+            'sleep time': int(request.form['sleep time']),
+            'asthma': int(request.form['asthma']),
+            'kidney disease': int(request.form['kidney disease']),
+            'skin cancer': int(request.form['skin cancer'])
+            # Add more feature data here...
+        }
+        # Convert the data into a DataFrame
+        input_data = pd.DataFrame([data])
+
+        # Use the machine learning model to make a prediction
+        prediction = model.predict(input_data)
+
+        return render_template('result.html', prediction=prediction_result)
+
+if __name__ == '__main__':
+    app.run(debug=True)

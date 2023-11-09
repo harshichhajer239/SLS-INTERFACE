@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Prediction</title>
+</head>
+<body>
+    <h1>Heart Disease Prediction</h1>
+    <form method="POST" action="/predict">
+        <label for="bmi">BMI:</label>
+        <input type="text" name="bmi" id="bmi"><br>
+
+        <label for="smoking">Have you smoked at least 100 cigarettes in your life?</label>
+        <select name="smoking" id="smoking">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="alcohol">Heavy drinker?</label>
+        <select name="alcohol" id="alcohol">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="stroke">Have you had a stroke?</label>
+        <select name="stroke" id="stroke">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="physical_health">Number of days with poor physical health (0-30):</label>
+        <input type="text" name="physical_health" id="physical_health"><br>
+
+        <label for="mental_health">Number of days with poor mental health (0-30):</label>
+        <input type="text" name="mental_health" id="mental_health"><br>
+
+        <label for="difficulty_walking">Serious difficulty walking or climbing stairs?</label>
+        <select name="difficulty_walking" id="difficulty_walking">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+        <label for="sex">Gender:</label>
+        <select name="sex" id="sex">
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select><br>
+
+        <label for="age_category">Age Category:</label>
+        <select name="age_category" id="age_category">
+            <option value="1">Category 1</option>
+            <option value="2">Category 2</option>
+            <!-- Add more age categories as needed -->
+        </select><br>
+
+        <label for="race">Race:</label>
+        <select name="race" id="race">
+            <option value="1">Race 1</option>
+            <option value="2">Race 2</option>
+            <!-- Add more race options as needed -->
+        </select><br>
+
+        <label for="diabetic">Have you had diabetes?</label>
+        <select name="diabetic" id="diabetic">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+        <label for="physical_activity">Engaged in physical activity/exercise in the past 30 days?</label>
+        <select name="physical_activity" id="physical_activity">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="genhealth">General health category:</label>
+        <select name="genhealth" id="genhealth">
+            <option value="1">Category 1</option>
+            <option value="2">Category 2</option>
+            <!-- Add more general health categories as needed -->
+        </select><br>
+
+        <label for="sleep_time">Average hours of sleep in a 24-hour period:</label>
+        <input type="text" name="sleep_time" id="sleep_time"><br>
+
+        <label for="asthma">Have you had asthma?</label>
+        <select name="asthma" id="asthma">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="kidney_disease">Have you been told you had kidney disease?</label>
+        <select name="kidney_disease" id="kidney_disease">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="skin_cancer">Have you had skin cancer?</label>
+        <select name="skin_cancer" id="skin_cancer">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <!-- Add more feature input fields as needed -->
+
+        <A HREF="result.html">
+        </A><input type="submit" value="Predict"></A>
+    </form>
+</body>
+</html>
+
+
+
+
+
